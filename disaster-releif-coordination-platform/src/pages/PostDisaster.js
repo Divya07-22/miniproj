@@ -1,0 +1,91 @@
+import React from 'react';
+
+const PostDisaster = () => {
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        backgroundColor: '#f4f4f9',
+        padding: '20px',
+    };
+
+    const formStyle = {
+        backgroundColor: '#fff',
+        padding: '30px',
+        borderRadius: '8px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        width: '100%',
+        maxWidth: '500px',
+    };
+
+    const labelStyle = {
+        marginBottom: '10px',
+        fontWeight: 'bold',
+        fontSize: '16px',
+        color: '#333',
+    };
+
+    const inputStyle = {
+        width: '100%',
+        padding: '10px',
+        marginBottom: '15px',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        fontSize: '14px',
+        color: '#333',
+    };
+
+    const textareaStyle = {
+        width: '100%',
+        padding: '10px',
+        marginBottom: '15px',
+        border: '1px solid #ccc',
+        borderRadius: '5px',
+        fontSize: '14px',
+        color: '#333',
+        resize: 'vertical',
+    };
+
+    const buttonStyle = {
+        padding: '12px 20px',
+        backgroundColor: '#4CAF50',
+        color: '#fff',
+        border: 'none',
+        borderRadius: '5px',
+        cursor: 'pointer',
+        fontSize: '16px',
+        width: '100%',
+        transition: 'background-color 0.3s',
+    };
+
+    const buttonHoverStyle = {
+        backgroundColor: '#45a049',
+    };
+
+    return (
+        <div style={containerStyle}>
+            <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>Post Disaster</h2>
+            <form style={formStyle}>
+                <div>
+                    <label style={labelStyle}>Disaster Name:</label>
+                    <input type="text" placeholder="Enter disaster name" style={inputStyle} />
+                </div>
+                <div>
+                    <label style={labelStyle}>Description:</label>
+                    <textarea placeholder="Enter description" style={textareaStyle}></textarea>
+                </div>
+                <div>
+                    <label style={labelStyle}>Date:</label>
+                    <input type="date" style={inputStyle} />
+                </div>
+                <button type="submit" style={buttonStyle} onMouseOver={(e) => e.target.style.backgroundColor = buttonHoverStyle.backgroundColor} onMouseOut={(e) => e.target.style.backgroundColor = buttonStyle.backgroundColor}>
+                    Submit
+                </button>
+            </form>
+        </div>
+    );
+};
+
+export default PostDisaster;
